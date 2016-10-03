@@ -1,4 +1,4 @@
-name: boilerplate
+name: pono
 port: 8080
 
 database:

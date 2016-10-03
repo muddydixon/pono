@@ -1,7 +1,12 @@
-Application Boilerplate including express / bookshelf / react / flux
+PONO - Proxy from HTTP GET Requests to Arbitrary TCP / UDP Requests.
 -----
 
-Application boilerplate for sample app server / web client.
+Proxy from HTTP GET Requests to Arbitrary TCP / UDP Requests.
+
+## Examples
+* HTTP GET Request with specific TOKEN -> HTTP POST Request with Headers and Bodies.
+* HTTP GET Request with specific TOKEN -> MQTT Request with a topic and a message.
+* HTTP GET Request with specific TOKEN -> Fluend Message post with a tag and a message.
 
 ## How to use
 

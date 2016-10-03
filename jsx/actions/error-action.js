@@ -3,10 +3,6 @@ import fetch from "isomorphic-fetch";
 import Const from "../constants";
 
 export default {
-  status(res){
-    if(res.status >= 300) throw new Error(res.message || res.statusText);
-    return res.json();
-  },
   fetch(){
     return fetch(`${Const.baseUrl}/base`, {
       method: "GET",

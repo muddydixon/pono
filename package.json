@@ -1,5 +1,5 @@
 {
-  "name": "boilerplate-app",
+  "name": "pono",
   "version": "1.0.0",
   "description": "App Boilerplate including express / bookshelf / react / flux",
   "main": "index.js",
@@ -31,6 +31,7 @@
     "bootstrap": "^3.3.7",
     "browserify": "^13.1.0",
     "checkit": "^0.7.0",
+    "co": "^4.6.0",
     "commander": "^2.9.0",
     "config": "^1.21.0",
     "cookie-parser": "^1.4.3",
