@@ -43,8 +43,8 @@ export default {
         "Content-Type": "application/json"
       }
     }).then(BaseAction.status).then(()=>{
-      dispatch({type: "USER_SIGNOUT"});
-      return ;
+      dispatch({type: "USER_SIGNOUT", user: null});
+      return null;
     }).catch((err)=>{
       dispatch({type: "ERROR", err});
     });

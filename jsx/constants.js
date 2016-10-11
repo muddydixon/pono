@@ -1,6 +1,7 @@
 export default {
   baseUrl: "",
   name: "PONO",
+  proxyPath: "/proxy",
   PROTOCOLS: ["http:", "https:", "mqtt:", "mqtts:", "ws:", "wss:", "fluent:"],
 
   BASE_FETCH:    "BASE_FETCH",

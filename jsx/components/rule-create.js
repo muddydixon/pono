@@ -47,7 +47,9 @@ export default class RuleCreate extends Component {
       name, protocol, host, port,
       payload: JSON.stringify(plugin.parseRef(this.refs.plugin.refs))
     };
-    RuleAction.create(data);
+    RuleAction.create(data).then(()=>{
+      this.context.router.push("/rules");
+    });
   }
   render(){
     return <div className="container">
@@ -71,8 +73,10 @@ export default class RuleCreate extends Component {
           <input type="text" ref="port" id="port" className="form-control" placeholder="Port" />
         </div>
         {this.getPayloadForm()}
-        <button type="submit" className="btn btn-info">Singup</button>
+        <button type="submit" className="btn btn-info">Create Rule</button>
       </form>
       </div>;
   }
 };
+
+RuleCreate.contextTypes = {router: React.PropTypes.object.isRequired};

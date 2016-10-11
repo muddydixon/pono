@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import RuleAction from "../actions/rule-action";
+import TokenAction from "../actions/token-action";
 
 export default class Authed extends Component {
   componentWillMount(){
@@ -7,13 +8,12 @@ export default class Authed extends Component {
       this.context.router.push("/signin");
     }else{
       RuleAction.fetchAll();
+      TokenAction.fetchAll();
     }
   }
   componentWillReceiveProps(){
     if(!this.props.data.currentUser){
       this.context.router.push("/signin");
-    }else{
-      RuleAction.fetchAll();
     }
   }
   render(){

@@ -9,7 +9,9 @@ export default class Signup extends Component {
           password = this.refs.password.value.trim(),
           confirm  = this.refs.confirm.value.trim();
 
-    UserAction.signup({username, password, confirm});
+    UserAction.signup({username, password, confirm}).then(()=>{
+      this.context.router.push("/rules");
+    });
   }
   render(){
     return <div className="container">
@@ -26,8 +28,9 @@ export default class Signup extends Component {
           <label>Confirm</label>
           <input type="password" ref="confirm" id="confirm" className="form-control" placeholder="confirm" />
         </div>
-        <button type="submit" className="btn btn-info">Singup</button>
+        <button type="submit" className="btn btn-info">Signup</button>
       </form>
       </div>;
   }
 };
+Signup.contextTypes = {router: React.PropTypes.object.isRequired};

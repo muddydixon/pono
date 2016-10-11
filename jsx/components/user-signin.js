@@ -7,7 +7,9 @@ export default class Signin extends Component {
     ev.preventDefault();
     const username = this.refs.username.value.trim();
     const password = this.refs.password.value.trim();
-    UserAction.signin({username, password});
+    UserAction.signin({username, password}).then(()=>{
+      this.context.router.push("/rules");
+    });;
   }
   render(){
     return <div className="container">
