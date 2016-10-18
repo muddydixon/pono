@@ -47,6 +47,7 @@ export default class RuleCreate extends Component {
       name, protocol, host, port,
       payload: JSON.stringify(plugin.parseRef(this.refs.plugin.refs))
     };
+    console.log(data);
     RuleAction.create(data).then(()=>{
       this.context.router.push("/rules");
     });

@@ -1,5 +1,6 @@
 import {dispatch} from "../dispatcher";
 import fetch from "isomorphic-fetch";
+import BaseAction from "./base-action";
 import Const from "../constants";
 
 export default {
@@ -14,11 +15,9 @@ export default {
       headers: {
         "Content-Type": "application/json"
       }
-    }).then((res)=> res.json()).then((config)=>{
+    }).then(BaseAction.status).then((config)=>{
       dispatch({type: "CONFIG_FETCH", config});
       return config;
-    }).catch((err)=>{
-      dispatch({type: "ERROR", err});
     });
   }
 };

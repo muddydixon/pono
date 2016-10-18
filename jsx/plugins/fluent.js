@@ -23,3 +23,17 @@ export default class Fluent extends Component {
     };
   }
 };
+
+Fluent.Detail = class Detail extends Component {
+  render(){
+    const {rule} = this.props;
+    return <tbody>
+      <tr><td>Name</td><td>{rule.name}</td></tr>
+      <tr><td>Identifier</td><td>{rule.identifier}</td></tr>
+      <tr><td>Protocol</td><td>{rule.protocol}</td></tr>
+
+      <tr><td>Tag</td><td>{rule.payload.tag}</td></tr>
+      <tr><td>Message</td><td>{rule.payload.message}</td></tr>
+      </tbody>;
+  }
+};

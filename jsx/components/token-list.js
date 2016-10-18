@@ -8,7 +8,7 @@ export default class TokenList extends Component {
     return <div className="container">
       <table className="table">
         <thead>
-          <tr><th>Name</th><th>Token</th><th>Rule</th><th>Whitelist</th></tr>
+          <tr><th>Name</th><th>Token</th><th>Rule</th><th>Whitelist</th><th /></tr>
         </thead>
         <tbody>
           {tokens.map(token=> <Token key={token.id} token={token} />)}

@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import * as Url from "url";
 
 import ErrorStore from "../stores/error-store";
 import UserStore from "../stores/user-store";
@@ -24,6 +25,9 @@ export default class App extends Component {
   }
   render(){
     console.log(this.state);
+    const url = Url.parse(location.hash.slice(1));
+    if(url.pathname === "/") location.href = "#/signin";
+
     return <div>
       <Header currentUser={this.state.currentUser} />
       <Error error={this.state.error} />

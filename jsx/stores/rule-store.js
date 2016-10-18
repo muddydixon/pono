@@ -8,6 +8,12 @@ class RuleStore extends ReduceStore {
   }
   reduce(state, action){
     switch(action.type){
+    case Const.PROP_CREATE:
+      return state.map(rule =>{
+        if(rule.id !== action.prop.rule_id) return rule;
+        rule.props.push(action.prop);
+        return rule;
+      });
     case Const.RULE_CREATE:
     case Const.RULE_FETCH:
       return state.concat(action.rule);

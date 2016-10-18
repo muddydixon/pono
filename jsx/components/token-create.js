@@ -15,7 +15,6 @@ export default class TokenCreate extends Component {
     };
   }
   isValidWhitelist(whitelist){
-    console.log(`[${whitelist}] ${whitelist.length}`);
     if(whitelist.length === 0) return true;
     const lists = whitelist.split(/\s*,\s*/);
     return lists.every(l => ipRegexp.test(l));

@@ -13,7 +13,7 @@ exports.up = function(knex, Promise) {
       table.string("identifier", 32).notNullable();
       table.integer("user_id").unsigned().notNullable();
       table.string("name",  64).notNullable();
-      table.enum("protocol", ["http:", "https:", "mqtt:", "mqtts:", "ws:", "wss:", "mysql:", "redis:", "fluentd:", "coap:"]).defaultTo("http:");
+      table.enum("protocol", ["http:", "https:", "mqtt:", "mqtts:", "ws:", "wss:", "mysql:", "redis:", "fluent:", "coap:"]).defaultTo("http:");
       table.string("host", 256).notNullable();
       table.integer("port").unsigned().notNullable();
       table.text("payload").defaultTo("");

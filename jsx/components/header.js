@@ -21,10 +21,10 @@ export default class Header extends Component {
                </Link>
                <nav className="collapse navbar-collapse">
                  <ul className="nav navbar-nav">
-                   <li><Link to="/rules"><i className="fa fa-list" />&nbsp;Rules</Link></li>
-                   <li><Link to="/rules/new"><i className="fa fa-cube" />&nbsp;Create Rule</Link></li>
-                   <li><Link to="/tokens"><i className="fa fa-list" />&nbsp;Token</Link></li>
-                   <li><Link to="/tokens/new"><i className="fa fa-cube" />&nbsp;Create Token</Link></li>
+                   <li><Link to="/rules"><i className="fa fa-bolt" />&nbsp;Rules</Link></li>
+                   <li><Link to="/rules/new"><i className="fa fa-plus" />&nbsp;Create Rule</Link></li>
+                   <li><Link to="/tokens"><i className="fa fa-key" />&nbsp;Token</Link></li>
+                   <li><Link to="/tokens/new"><i className="fa fa-plus" />&nbsp;Create Token</Link></li>
                  </ul>
                  {nav}
                </nav>

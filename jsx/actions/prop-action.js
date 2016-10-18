@@ -13,10 +13,8 @@ export default {
       },
       body: JSON.stringify(prop)
     }).then(BaseAction.status).then((prop)=>{
-      dispatch({type: "PROP_CREATE", prop});
+      dispatch({type: Const.PROP_CREATE, prop});
       return prop;
-    }).catch((err)=>{
-      dispatch({type: "ERROR", err});
     });
   },
   fetchAll(opts){
@@ -27,10 +25,8 @@ export default {
         "Content-Type": "application/json"
       }
     }).then(BaseAction.status).then((props)=>{
-      dispatch({type: "PROP_FETCHALL", props});
+      dispatch({type: Const.PROP_FETCHALL, props});
       return props;
-    }).catch((err)=>{
-      dispatch({type: "ERROR", err});
     });
   },
 };

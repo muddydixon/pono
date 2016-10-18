@@ -15,8 +15,6 @@ export default {
     }).then(BaseAction.status).then((rule)=>{
       dispatch({type: "RULE_CREATE", rule});
       return rule;
-    }).catch((err)=>{
-      dispatch({type: "ERROR", err});
     });
   },
   fetchAll(opts){
@@ -29,8 +27,6 @@ export default {
     }).then(BaseAction.status).then((rules)=>{
       dispatch({type: "RULE_FETCHALL", rules});
       return rules;
-    }).catch((err)=>{
-      dispatch({type: "ERROR", err});
     });
   },
 };

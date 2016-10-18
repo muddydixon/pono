@@ -13,10 +13,9 @@ export default {
       },
       body: JSON.stringify(token)
     }).then(BaseAction.status).then((token)=>{
+      console.log(token);
       dispatch({type: "TOKEN_CREATE", token});
       return token;
-    }).catch((err)=>{
-      dispatch({type: "ERROR", err});
     });
   },
   fetchAll(opts){
@@ -29,8 +28,6 @@ export default {
     }).then(BaseAction.status).then((tokens)=>{
       dispatch({type: "TOKEN_FETCHALL", tokens});
       return tokens;
-    }).catch((err)=>{
-      dispatch({type: "ERROR", err});
     });
   },
 };

@@ -4,21 +4,10 @@ import Const from "../constants";
 
 export default {
   status(res){
-    if(res.status >= 300) throw new Error(res.message || res.statusText);
+    if(res.status >= 300){
+      // dispatch({type: Const.ERROR, error: new Error(res.message || res.statusText)});
+      return null;
+    }
     return res.json();
-  },
-  fetch(){
-    return fetch(`${Const.baseUrl}/base`, {
-      method: "GET",
-      credentials: "same-origin",
-      headers: {
-        "Content-Type": "application/json"
-      }
-    }).then((res)=> res.json()).then((config)=>{
-      dispatch({type: "BASE_FETCH", config});
-      return config;
-    }).catch((err)=>{
-      dispatch({type: "ERROR", err});
-    });
   }
 };

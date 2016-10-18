@@ -16,8 +16,6 @@ export default {
     }).then(BaseAction.status).then((user)=>{
       dispatch({type: "USER_SIGNUP", user});
       return user;
-    }).catch((err)=>{
-      dispatch({type: "ERROR", err});
     });
   },
   signin(user){
@@ -31,8 +29,6 @@ export default {
     }).then(BaseAction.status).then((user)=>{
       dispatch({type: "USER_SIGNIN", user});
       return user;
-    }).catch((err)=>{
-      dispatch({type: "ERROR", err});
     });
   },
   signout(){
@@ -45,8 +41,6 @@ export default {
     }).then(BaseAction.status).then(()=>{
       dispatch({type: "USER_SIGNOUT", user: null});
       return null;
-    }).catch((err)=>{
-      dispatch({type: "ERROR", err});
     });
   },
   fetchCurrentUser(){
@@ -59,8 +53,6 @@ export default {
     }).then(BaseAction.status).then((user)=>{
       dispatch({type: "USER_CURRENT", user});
       return user;
-    }).catch((err)=>{
-      dispatch({type: "ERROR", err});
     });
   },
 };

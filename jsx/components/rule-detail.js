@@ -27,7 +27,7 @@ export default class RuleDetail extends Component {
       </thead>
       <Plugin.Detail rule={rule}/>
       </table>
-      <PropList props={rule.props} />
+      <PropList props={rule.props} ruleName={rule.name}/>
     </div>;
   }
 };
