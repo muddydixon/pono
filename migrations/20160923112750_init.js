@@ -41,7 +41,16 @@ exports.up = function(knex, Promise) {
       table.timestamps();
 
       table.index(["user_id", "name"]);
-    })
+    }),
+    knex.schema.createTableIfNotExists("logs", table =>{
+      table.increments();
+      table.string("remote_addr").notNullable();
+      table.integer("rule_id").unsigned().notNullable();
+      table.integer("token_id").unsigned().notNullable();
+      table.string("query").notNullable();
+      table.timestamps();
+
+    }),
   ]);
 };
 
@@ -51,5 +60,6 @@ exports.down = function(knex, Promise) {
     knex.schema.dropTableIfExists("props"),
     knex.schema.dropTableIfExists("rules"),
     knex.schema.dropTableIfExists("tokens"),
+    knex.schema.dropTableIfExists("logs"),
   ]);
 };

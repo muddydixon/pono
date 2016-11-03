@@ -7,6 +7,7 @@ export default class Header extends Component {
     const {currentUser} = this.props;
     const nav = currentUser ?
             <ul className="nav navbar-nav">
+              <li><Link to="/dashboard"><i className="fa fa-dashboard" />&nbsp;Dashboard</Link></li>
               <li><Link to="/rules"><i className="fa fa-bolt" />&nbsp;Rules</Link></li>
               <li><Link to="/rules/new"><i className="fa fa-plus" />&nbsp;Create Rule</Link></li>
               <li><Link to="/tokens"><i className="fa fa-key" />&nbsp;Token</Link></li>
