@@ -6,11 +6,13 @@ import {Container} from "flux/utils";
 import App from "./container/app";
 import Authed from "./components/authed";
 import Unauthed from "./components/unauthed";
+import Dashboard from "./components/dashboard";
 import RuleList from "./components/rule-list";
 import RuleDetail from "./components/rule-detail";
 import RuleCreate from "./components/rule-create";
 import TokenList from "./components/token-list";
 import TokenCreate from "./components/token-create";
+import TokenEdit from "./components/token-create";
 import TokenDetail from "./components/token-detail";
 import PropList from "./components/prop-list";
 import Signin from "./components/user-signin";
@@ -20,6 +22,7 @@ import Signout from "./components/user-signout";
 const routes = <Router history={hashHistory}>
         <Route path="/" component={Container.create(App)} >
           <Route component={Authed}>
+            <Route path="dashboard" component={Dashboard} />
             <Route path="rules/new" component={RuleCreate} />
             <Route path="rules/:name" component={RuleDetail} />
             <Route path="rules" component={RuleList} />

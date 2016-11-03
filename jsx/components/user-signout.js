@@ -4,7 +4,9 @@ import UserAction from "../actions/user-action";
 
 export default class Signout extends Component {
   componentWillMount(){
-    UserAction.signout();
+    UserAction.signout().then(()=>{
+      this.context.router.push("/signin");
+    });
   }
   render(){
     return <div/>;

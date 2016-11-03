@@ -13,7 +13,7 @@ export default {
       },
       body: JSON.stringify(rule)
     }).then(BaseAction.status).then((rule)=>{
-      dispatch({type: "RULE_CREATE", rule});
+      dispatch({type: Const.RULE_CREATE, rule});
       return rule;
     });
   },
@@ -25,8 +25,22 @@ export default {
         "Content-Type": "application/json"
       }
     }).then(BaseAction.status).then((rules)=>{
-      dispatch({type: "RULE_FETCHALL", rules});
+      dispatch({type: Const.RULE_FETCHALL, rules});
       return rules;
     });
   },
+  delete(rule){
+    return fetch(`${Const.baseUrl}/rules/${rule.name}`, {
+      method: "DELETE",
+      credentials: "same-origin",
+      headers: {
+        "Content-Type": "application/json"
+      }
+    }).then(BaseAction.status).then(()=>{
+      dispatch({type: Const.RULE_DELETE, rule});
+      return rule;
+    });
+  },
+  flight(rule){
+  }
 };

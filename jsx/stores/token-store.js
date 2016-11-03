@@ -12,9 +12,10 @@ class TokenStore extends ReduceStore {
     case Const.TOKEN_FETCH:
       return state.concat(action.token);
     case Const.TOKEN_FETCHALL:
-      return state.concat(action.tokens);
+      return action.tokens;
     case Const.TOKEN_MODIFY:
     case Const.TOKEN_DELETE:
+      return state.filter(token => token.id !== action.token.id);
     default:
       return state;
     }

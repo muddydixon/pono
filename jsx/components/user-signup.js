@@ -10,7 +10,7 @@ export default class Signup extends Component {
           confirm  = this.refs.confirm.value.trim();
 
     UserAction.signup({username, password, confirm}).then(()=>{
-      this.context.router.push("/rules");
+      this.context.router.push("/dashboard");
     });
   }
   render(){

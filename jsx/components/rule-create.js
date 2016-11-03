@@ -53,6 +53,8 @@ export default class RuleCreate extends Component {
     });
   }
   render(){
+    const {rule} = this.props.data;
+    console.log(rule);
     return <div className="container">
       <form onSubmit={this.onSubmit.bind(this)}>
         <div className="form-group">

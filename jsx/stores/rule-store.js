@@ -18,9 +18,10 @@ class RuleStore extends ReduceStore {
     case Const.RULE_FETCH:
       return state.concat(action.rule);
     case Const.RULE_FETCHALL:
-      return state.concat(action.rules);
+      return action.rules;
     case Const.RULE_MODIFY:
     case Const.RULE_DELETE:
+      return state.filter(rule => rule.id !== action.rule.id);
     default:
       return state;
     }

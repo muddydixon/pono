@@ -4,14 +4,14 @@ import UserAction from "../actions/user-action";
 export default class Unauthed extends Component {
   componentWillMount(){
     if(this.props.data.currentUser){
-      this.context.router.push("/rules");
+      this.context.router.push("/dashboard");
     }else{
       UserAction.fetchCurrentUser();
     }
   }
   componentWillReceiveProps(){
     if(this.props.data.currentUser){
-      this.context.router.push("/rules");
+      this.context.router.push("/dashboard");
     }else{
       UserAction.fetchCurrentUser();
     }
